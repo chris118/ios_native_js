@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <br/>
+        <br/>
+        <p>拦截请求</p>
+        
+        <div align="center" style="border:1px solid red; background:#eaa9a9;">
+            <button id="btn" style="width:100px; height:50px;" onclick="js_call_native()">js_call_native</button>
+        </div>
+    </body>
+    <script>
+        function js_call_native() {
+            if(iOSModel == null){
+                alert("iOSModel is null");
+                return;
+            }
+            iOSModel.js_call_native_with_parameter("message from js");
+            //iOSModel.js_call_native();
+        }
+    
+        var js_func = function(message) {
+            alert(message);
+            return message+ "-----> js do something";
+        }
+    </script>
+</html>
